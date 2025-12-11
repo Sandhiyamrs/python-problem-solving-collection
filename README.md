@@ -26,3 +26,12 @@ These projects are designed to improve logical thinking, coding skills, and port
 ---
 
 Clone and start coding:
+
+-
+
+git clone https://github.com/
+
+<your-username>/python-problem-solving-collection
+
+
+Enjoy coding!
