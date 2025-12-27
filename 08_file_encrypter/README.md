@@ -1,13 +1,9 @@
-# File Encrypter / Decrypter
+# File Encrypter
 
-### Problem
-Encrypt and decrypt text files using a simple XOR key.
+File Encrypter is a Python utility that secures files by encrypting
+and decrypting their contents using symmetric encryption.
 
-### Why?
-Basic cryptography practice.
-
-### Input
-- File  
-- Key  
-### Output
-- Encrypted/Decrypted file  
+This project demonstrates:
+- File handling
+- Cryptography basics
+- Secure data storage practices
