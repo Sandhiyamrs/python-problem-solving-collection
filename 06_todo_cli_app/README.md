@@ -1,9 +1,9 @@
-# CLI To-Do App
+# To-Do CLI App
 
-### Problem
-Maintain a simple to-do list using command-line input.
+A command-line to-do list manager that supports
+task creation, completion tracking, and listing.
 
-### Input
-- Task name  
-### Output
-- Tasks added/removed  
+This project demonstrates:
+- List and dictionary manipulation
+- State management
+- CLI-friendly logic
