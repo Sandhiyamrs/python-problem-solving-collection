@@ -1,4 +1,6 @@
-## Word Frequency Counter
+## Problem Statement
 
-Count how many times each word appears in a sentence.
-Ignore letter casing.
+Create a file encryption tool that:
+- Encrypts file content
+- Decrypts encrypted files
+- Uses a secure encryption key
