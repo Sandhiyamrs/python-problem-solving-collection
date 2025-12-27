@@ -1,11 +1,13 @@
-num = int(input("Enter a number: "))
+import random
 
-if num <= 1:
-    print("Not Prime")
-else:
-    for i in range(2, int(num**0.5) + 1):
-        if num % i == 0:
-            print("Not Prime")
+def play():
+    number = random.randint(1, 20)
+    while True:
+        guess = int(input("Guess the number: "))
+        if guess == number:
+            print("Correct!")
             break
-    else:
-        print("Prime")
+        elif guess < number:
+            print("Too low")
+        else:
+            print("Too high")
