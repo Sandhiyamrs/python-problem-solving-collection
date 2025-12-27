@@ -1,9 +1,9 @@
 # Text Summarizer
 
-### Problem
-Summarize a paragraph by extracting important sentences.
+A Python-based text summarizer that extracts the most important
+sentences from a paragraph using word frequency analysis.
 
-### Input
-- Long text  
-### Output
-- Short summary  
+This project introduces:
+- Text processing
+- NLP basics
+- Frequency-based summarization
