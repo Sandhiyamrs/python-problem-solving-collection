@@ -1,11 +1,9 @@
 # Expense Tracker
 
-### Problem
-Track daily expenses and show a summary.
+A lightweight expense tracking system that allows users to
+record expenses, categorize them, and compute totals.
 
-### Input
-- Item name  
-- Amount  
-### Output
-- List of expenses  
-- Total amount  
+This project focuses on:
+- Data organization
+- Aggregation logic
+- Clean object-oriented design
