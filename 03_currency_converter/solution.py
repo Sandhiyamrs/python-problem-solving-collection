@@ -1,14 +1,12 @@
-import requests
+RATES = {
+    "USD": 1.0,
+    "INR": 83.0,
+    "EUR": 0.9
+}
 
-def convert(amount, from_c, to_c):
-    url = f"https://api.exchangerate-api.com/v4/latest/{from_c}"
-    data = requests.get(url).json()
-    rate = data["rates"][to_c]
-    return amount * rate
+def convert(amount, from_currency, to_currency):
+    usd = amount / RATES[from_currency]
+    return usd * RATES[to_currency]
 
-amt = float(input("Amount: "))
-from_currency = input("From currency (USD): ").upper()
-to_currency = input("To currency (INR): ").upper()
-
-result = convert(amt, from_currency, to_currency)
-print("Converted Amount:", round(result, 2))
+if __name__ == "__main__":
+    print(convert(100, "USD", "INR"))
