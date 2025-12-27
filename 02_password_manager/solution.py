@@ -1,15 +1,27 @@
-import random
-import string
+import json
 
-def generate_password(length=14):
-    chars = string.ascii_letters + string.digits + string.punctuation
-    return ''.join(random.choice(chars) for _ in range(length))
+DATA_FILE = "passwords.json"
 
-site = input("Enter website/app name: ")
-password = generate_password()
+def load_data():
+    try:
+        with open(DATA_FILE, "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {}
 
-with open("passwords.txt", "a") as f:
-    f.write(f"{site}: {password}\n")
+def save_data(data):
+    with open(DATA_FILE, "w") as f:
+        json.dump(data, f)
 
-print("Generated Password:", password)
-print("Saved to passwords.txt")
+def add_password(service, username, password):
+    data = load_data()
+    data[service] = {"username": username, "password": password}
+    save_data(data)
+
+def get_password(service):
+    data = load_data()
+    return data.get(service, "Service not found")
+
+if __name__ == "__main__":
+    add_password("gmail", "user@gmail.com", "1234")
+    print(get_password("gmail"))
