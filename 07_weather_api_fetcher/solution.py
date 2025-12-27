@@ -1,11 +1,15 @@
 import requests
 
-API_KEY = "your_api_key_here"
+def fetch_weather(city: str, api_key: str) -> dict:
+    url = "https://api.weatherapi.com/v1/current.json"
+    params = {"key": api_key, "q": city}
+    response = requests.get(url)
 
-city = input("Enter city: ")
-url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
+    if response.status_code != 200:
+        raise Exception("Failed to fetch weather data")
 
-data = requests.get(url).json()
+    return response.json()
 
-print("Temperature:", data["main"]["temp"], "°C")
-print("Weather:", data["weather"][0]["description"])
+
+if __name__ == "__main__":
+    print("Provide API key to test")
