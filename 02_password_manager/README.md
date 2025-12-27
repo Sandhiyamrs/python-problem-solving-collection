@@ -1,18 +1,4 @@
-# Password Manager Utility
+# Password Manager
 
-### Problem  
-
-Generate a strong random password and save it to a text file with the website/app name.
-
---
-
-### Why?
-Useful for security-conscious users and storing credentials safely.
-
---
-
-### Input
-- Website name  
-### Output
-- Generated password  
-- Saved to passwords.txt  
+A command-line password manager that securely stores and retrieves passwords
+using encryption. Designed for learning secure storage and file handling.
