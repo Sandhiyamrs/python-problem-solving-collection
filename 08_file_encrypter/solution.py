@@ -1,12 +1,24 @@
-def xor_encrypt(text, key):
-    return ''.join(chr(ord(c) ^ key) for c in text)
+from cryptography.fernet import Fernet
 
-choice = input("Encrypt or Decrypt (e/d): ")
-file = input("File name: ")
-key = int(input("Key (0-255): "))
+def generate_key():
+    return Fernet.generate_key()
 
-data = open(file).read()
-output = xor_encrypt(data, key)
+def encrypt_file(filename, key):
+    cipher = Fernet(key)
+    with open(filename, "rb") as f:
+        data = f.read()
 
-open("output.txt", "w").write(output)
-print("Output saved as output.txt")
+    encrypted_data = cipher.encrypt(data)
+
+    with open(filename, "wb") as f:
+        f.write(encrypted_data)
+
+def decrypt_file(filename, key):
+    cipher = Fernet(key)
+    with open(filename, "rb") as f:
+        encrypted_data = f.read()
+
+    decrypted_data = cipher.decrypt(encrypted_data)
+
+    with open(filename, "wb") as f:
+        f.write(decrypted_data)
