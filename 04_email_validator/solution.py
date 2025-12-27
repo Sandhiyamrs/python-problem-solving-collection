@@ -1,10 +1,19 @@
-import re
+def is_valid_email(email: str) -> bool:
+    if not isinstance(email, str):
+        return False
 
-email = input("Enter Email: ")
+    if "@" not in email:
+        return False
 
-pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$"
+    username, _, domain = email.partition("@")
 
-if re.match(pattern, email):
-    print("Valid Email ✔")
-else:
-    print("Invalid Email ❌")
+    if not username or "." not in domain:
+        return False
+
+    return True
+
+
+if __name__ == "__main__":
+    emails = ["user@mail.com", "invalidmail", "user@site"]
+    for e in emails:
+        print(e, "=>", is_valid_email(e))
