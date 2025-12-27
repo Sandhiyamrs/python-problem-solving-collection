@@ -1,10 +1,5 @@
 # Weather API Fetcher
 
-### Problem
-Fetch temperature and weather details for a city using OpenWeather API.
-
-### Input
-- City name  
-### Output
-- Temperature  
-- Weather condition  
+Fetches live weather data for a given city using a public API.
+This project introduces API consumption, error handling,
+and structured responses.
