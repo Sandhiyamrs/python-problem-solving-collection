@@ -1,9 +1,9 @@
-# Number Guessing Game
+# Number Guess Game
 
-### Problem
-Computer thinks of a number, user guesses until correct.
+A simple interactive number guessing game where the player
+tries to guess a randomly generated number.
 
-### Input
-- Guess  
-### Output
-- Too high / Too low / Correct  
+Focus areas:
+- Random number generation
+- Game loops
+- User interaction logic
