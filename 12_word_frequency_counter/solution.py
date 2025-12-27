@@ -1,8 +1,11 @@
-sentence = input("Enter a sentence: ").lower().split()
-freq = {}
+from cryptography.fernet import Fernet
 
-for word in sentence:
-    freq[word] = freq.get(word, 0) + 1
+def generate_key():
+    return Fernet.generate_key()
 
-for word, count in freq.items():
-    print(word, ":", count)
+def encrypt_file(path, key):
+    cipher = Fernet(key)
+    with open(path, "rb") as f:
+        encrypted = cipher.encrypt(f.read())
+    with open(path, "wb") as f:
+        f.write(encrypted)
