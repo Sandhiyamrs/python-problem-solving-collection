@@ -1,8 +1,6 @@
-## Palindrome Checker
+## Problem Statement
 
-Write a Python program to check whether a given string is a palindrome.
-Ignore spaces and letter casing.
-
-### Example
-Input: "Madam"
-Output: Palindrome
+Build a Python program that:
+- Fetches current weather details for a city
+- Handles API and network errors
+- Displays temperature and weather conditions
