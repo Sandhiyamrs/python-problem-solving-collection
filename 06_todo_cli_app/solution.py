@@ -1,14 +1,18 @@
 tasks = []
 
-while True:
-    print("\n1) Add Task  2) View Tasks  3) Exit")
-    ch = input("Choose: ")
+def add_task(title: str):
+    tasks.append({"title": title, "done": False})
 
-    if ch == "1":
-        tasks.append(input("Task: "))
-    elif ch == "2":
-        print("\nTasks:")
-        for t in tasks:
-            print("-", t)
-    elif ch == "3":
-        break
+def complete_task(index: int):
+    if 0 <= index < len(tasks):
+        tasks[index]["done"] = True
+
+def list_tasks():
+    return tasks
+
+
+if __name__ == "__main__":
+    add_task("Learn Python")
+    add_task("Build projects")
+    complete_task(0)
+    print(list_tasks())
